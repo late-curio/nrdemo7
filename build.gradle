@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '1.5.22.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.7'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+bootRun {
+	jvmArgs = ["-Dnewrelic.config.file=/Users/tcrone/conf/newrelic.yml", "-Dnewrelic.environment=staging", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005", "-javaagent:/Users/tcrone/lib/nrjars/newrelic-agent-6.5.2-SNAPSHOT.jar"]
+}
