@@ -5,3 +5,9 @@
 * Change jvmArgs in build.gradle `bootRun`
 
 `gradle bootRun`
+
+`curl http://localhost:8080/doeet`
+
+
+`Done`
+
